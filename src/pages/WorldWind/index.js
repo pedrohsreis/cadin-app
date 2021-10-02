@@ -60,7 +60,7 @@ export default class WorldWind extends Component {
             { layer: 'compass', options: { category: 'setting', enabled: false } },
             { layer: 'coordinates', options: { category: 'setting', enabled: true } },
             { layer: 'view-controls', options: { category: 'setting', enabled: true } },
-            { layer: 'stars', options: { category: 'setting', enabled: false } },
+            { layer: 'stars', options: { category: 'setting', enabled: true } },
             { layer: 'atmosphere-day-night', options: { category: 'setting', enabled: true } }
         ]
 
