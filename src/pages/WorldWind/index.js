@@ -85,7 +85,15 @@ export default class WorldWind extends Component {
                         <Globe
                             ref={this.globeRef}
                             layers={layers}
-                            markers={[]}
+                            markers={
+                                [{
+                                    uniqueId: 1,
+                                    position: {
+                                        latitude: 32.18,
+                                        longitude: 98.89,
+                                        altitude: 498
+                                    }
+                                }]}
                         />
                     </div>
                     <div className='overlayTools noninteractive'>
