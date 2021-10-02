@@ -61,7 +61,7 @@ export default class WorldWind extends Component {
             { layer: 'coordinates', options: { category: 'setting', enabled: true } },
             { layer: 'view-controls', options: { category: 'setting', enabled: true } },
             { layer: 'stars', options: { category: 'setting', enabled: false } },
-            { layer: 'atmosphere-day-night', options: { category: 'setting', enabled: false } }
+            { layer: 'atmosphere-day-night', options: { category: 'setting', enabled: true } }
         ]
 
         const navbarItems = [
