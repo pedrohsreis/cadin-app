@@ -1,0 +1,21 @@
+
+.button {
+    background:rgba(255,255,255,0.35);
+    padding: 0;
+}
+
+.toggle {
+    background:rgba(255,255,255,0.35) !important;
+    width: 30px;
+    padding: 0;
+}
+
+.dropdown {
+    background:rgba(255,255,255,0.35) !important;
+    min-width: 30px !important;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+}

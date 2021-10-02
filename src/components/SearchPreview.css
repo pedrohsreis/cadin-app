@@ -1,0 +1,23 @@
+.globe {
+    height: 200px;
+}
+
+
+/*Sets the maximum height of the entire modal to 100% of the screen height*/
+.modal {
+  margin: 0 auto;
+  max-height: 100vh;
+}
+
+/*Sets the maximum height of the modal body to 90% of the screen height*/
+.body {
+  max-height: 90vh;
+}
+
+
+/*Sets the height of a modal's canvas to 60% minus the height of a footer*/
+.table {
+  max-height: calc(60vh - 71px);
+  overflow-y: auto;
+}
+

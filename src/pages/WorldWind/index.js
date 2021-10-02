@@ -17,7 +17,7 @@ import {
     SearchBox,
     SettingsCard,
     Tools
-} from 'worldwind-react-globe-bs4'
+} from '../../components'
 
 import './App.css'
 
@@ -25,22 +25,61 @@ export default class WorldWind extends Component {
 
     constructor(props) {
         super(props)
+
+
+        this.globeRef = React.createRef()
+        this.layersRef = React.createRef()
+        this.markersRef = React.createRef()
+        this.settingsRef = React.createRef()
+
         this.state = {
             lat: 34.2,
             lon: -119.2,
             alt: 10e6,
             globe: null
         }
-
-        this.globeRef = React.createRef()
-        this.layersRef = React.createRef()
-        this.markersRef = React.createRef()
-        this.settingsRef = React.createRef()
     }
 
     componentDidMount() {
         // Get the component with the WorldWindow after mounting
         this.setState({ globe: this.globeRef.current })
+
+        const positions = [
+            {
+                altitude: 8000000,
+                latitude: 60,
+                longitude: 30,
+            },
+            {
+                altitude: 6000000,
+                latitude: 70,
+                longitude: 20,
+            },
+            {
+                altitude: 3000000,
+                latitude: 40,
+                longitude: 10,
+            },
+            {
+                altitude: 8000000,
+                latitude: 60,
+                longitude: 30,
+            },
+            {
+                altitude: 8000000,
+                latitude: 100,
+                longitude: -30,
+            }
+        ]
+
+
+        const tools = new Tools({ globe: this.globeRef.current, markers: this.markersRef.current, markersLayerName: 'Markers' });
+        const callback = tools.dropMarkerCallback.bind(this);
+
+        positions.map(position => {
+            callback(position);
+        })
+
     }
 
     render() {
@@ -85,22 +124,18 @@ export default class WorldWind extends Component {
                         <Globe
                             ref={this.globeRef}
                             layers={layers}
-                            markers={
-                                [{
-                                    uniqueId: 1,
-                                    position: {
-                                        latitude: 32.18,
-                                        longitude: 98.89,
-                                        altitude: 498
-                                    }
-                                }]}
+                            altitude={8000000}
+                            latitude={60}
+                            longitude={30}
                         />
                     </div>
                     <div className='overlayTools noninteractive'>
                         <Tools
                             globe={globe}
                             markers={this.markersRef.current}
-                            markersLayerName='Markers' />
+                            markersLayerName='Markers'
+                            altitudeMode
+                        />
                     </div>
                     <div className='overlayCards noninteractive'>
                         <CardColumns>
@@ -111,7 +146,9 @@ export default class WorldWind extends Component {
                             <MarkersCard
                                 ref={this.markersRef}
                                 globe={globe}
-                                markersLayerName='Markers' />
+                                markersLayerName='Markers'
+
+                            />
                             <SettingsCard
                                 ref={this.settingsRef}
                                 categories={['setting']}
