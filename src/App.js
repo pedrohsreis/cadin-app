@@ -1,18 +1,19 @@
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import WorldWind from "./pages/WorldWind";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={require('./assets/img/cadin-logo.png').default} />
-        <p>
-          Welcome to the Cadin boilerplate! Wish us good luck.
-        </p>
-        <p>
-          By Afonso, Amanda, Pedro and Vitor.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Route component={Home} path="/" exact={true} />
+      <Route component={WorldWind} path="/ww" />
+    </Router>
   );
 }
 
