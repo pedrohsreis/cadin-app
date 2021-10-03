@@ -10,11 +10,13 @@ Cadin-App: https://github.com/pedrohsreis/cadin-app
 Cadin-end: https://github.com/afonsofonbraga/cadin-end
 
 ## Available Scripts
+To run it requires Node.js installed.
 
 In the project directory, you can run:
 
-### `npm start`
-
+````
+npm start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
