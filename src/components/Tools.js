@@ -82,8 +82,8 @@ export default class Tools extends Component {
             WorldWind.OFFSET_FRACTION, 0.5,
             WorldWind.OFFSET_FRACTION, 1.0);
         attributes.labelAttributes.color = WorldWind.Color.YELLOW;
-        attributes.drawLeaderLine = true;
-        attributes.leaderLineAttributes.outlineColor = WorldWind.Color.RED;
+        attributes.drawLeaderLine = false;
+        attributes.leaderLineAttributes.outlineColor = WorldWind.Color.YELLOW;
         attributes.imageSource = this.state.selectedMarkerImage;
 
         let placemark = new WorldWind.Placemark(position, /*eyeDistanceScaling*/ true, attributes);

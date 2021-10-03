@@ -53,24 +53,12 @@ export default class WorldWind extends Component {
                 "longitude": 74.0
             }
         ]
-
-        axios.get("http://cadin-end.herokuapp.com/coordinates")
+        console.count("TEXTO")
+        axios.get("http://127.0.0.1:5000/coordinates")
         .then((res) => {
+            console.count("TEXTO222")
             console.log(res);
-            positions = [
-                {
-                    "latitude": 23.0, 
-                    ['debris_name']: "FENGYUN 1C", 
-                    "altitude": 631078.4293272077, 
-                    "longitude": 74.0
-                },
-                {
-                    "latitude": 2.0, 
-                    ['debris_name']: "FENGYUN 1asdasdC", 
-                    "altitude": 6331078.4293272077, 
-                    "longitude": 7.0
-                }
-            ];
+            positions = res.data;
         })
 
         const tools = new Tools({ globe: this.globeRef.current, markers: this.markersRef.current, markersLayerName: 'Markers' });
