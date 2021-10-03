@@ -29,13 +29,13 @@ export default class Tools extends Component {
 
     static pushpins = [
         require("../assets/img/img_verm.png"),
-        "https://lh3.googleusercontent.com/ogw/ADea4I4IXxCNWS5_ZXwkGibaAyMkq_x2wXzu1Keq0GEb=s32-c-mo",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-blue.png",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-orange.png",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-teal.png",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-purple.png",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-white.png",
-        "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-black.png"
+        // "https://lh3.googleusercontent.com/ogw/ADea4I4IXxCNWS5_ZXwkGibaAyMkq_x2wXzu1Keq0GEb=s32-c-mo",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-blue.png",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-orange.png",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-teal.png",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-purple.png",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-white.png",
+        // "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-black.png"
     ];
 
     constructor(props) {
@@ -58,10 +58,10 @@ export default class Tools extends Component {
     }
 
 
-    selectPushpin(pushpin) {
-        this.setState({ selectedMarkerImage: pushpin });
-        this.armDropMarker();
-    }
+    // selectPushpin(pushpin) {
+    //     this.setState({ selectedMarkerImage: pushpin });
+    //     this.armDropMarker();
+    // }
 
     armDropMarker() {
         this.props.globe.armClickDrop(this.dropMarkerCallback);
@@ -114,28 +114,28 @@ export default class Tools extends Component {
         }
 
         // Create a tool palette with dropdowns
-        const dropdownItems = Tools.pushpins.map((pushpin) =>
-            <DropdownItem key={pushpin} onClick={() => this.selectPushpin(pushpin)} className={style.button}>
-                <img className={style.image} src={pushpin} alt="Selected Marker" />
-            </DropdownItem>
-        );
+        // const dropdownItems = Tools.pushpins.map((pushpin) =>
+        //     <DropdownItem key={pushpin} onClick={() => this.selectPushpin(pushpin)} className={style.button}>
+        //         <img className={style.image} src={pushpin} alt="Selected Marker" />
+        //     </DropdownItem>
+        // );
 
-        return (
-            <div className="btn-group interactive p-3">
-                <Button
-                    className={`${style.button} p-1`}
-                    onClick={() => this.armDropMarker()}>
-                    <FontAwesome name='plus' />
-                    <img className={style.image} src={this.state.selectedMarkerImage} alt="Marker" />
-                </Button>
-                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                    <DropdownToggle caret className={style.toggle} />
-                    <DropdownMenu className={style.dropdown}>
-                        {dropdownItems}
-                    </DropdownMenu>
-                </ButtonDropdown>
+        return (null
+            // <div className="btn-group interactive p-3">
+            //     <Button
+            //         className={`${style.button} p-1`}
+            //         onClick={() => this.armDropMarker()}>
+            //         <FontAwesome name='plus' />
+            //         <img className={style.image} src={this.state.selectedMarkerImage} alt="Marker" />
+            //     </Button>
+            //     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            //         <DropdownToggle caret className={style.toggle} />
+            //         <DropdownMenu className={style.dropdown}>
+            //             {dropdownItems}
+            //         </DropdownMenu>
+            //     </ButtonDropdown>
 
-            </div>
+            // </div>
         );
     }
 };
