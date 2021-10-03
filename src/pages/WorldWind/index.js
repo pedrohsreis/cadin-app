@@ -44,7 +44,7 @@ export default class WorldWind extends Component {
         // Get the component with the WorldWindow after mounting
         this.setState({ globe: this.globeRef.current })
 
-        const positions = [
+        let positions = [
             {
                 altitude: 8000000,
                 latitude: 60,
