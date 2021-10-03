@@ -82,7 +82,7 @@ export default class WorldWind extends Component {
         axios.get("http://cadin-end.herokuapp.com/coordinates")
         .then((res) => {
             console.log(res);
-            // positions = res.data;
+            positions = res.data;
         })
 
         const tools = new Tools({ globe: this.globeRef.current, markers: this.markersRef.current, markersLayerName: 'Markers' });
