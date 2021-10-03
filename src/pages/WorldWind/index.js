@@ -5,6 +5,7 @@
  */
 import React, { Component } from 'react'
 import Globe from 'worldwind-react-globe'
+import axios from 'axios';
 import {
     CardColumns,
     Container
@@ -44,40 +45,51 @@ export default class WorldWind extends Component {
         // Get the component with the WorldWindow after mounting
         this.setState({ globe: this.globeRef.current })
 
+        
         let positions = [
             {
                 altitude: 8000000,
                 latitude: 60,
                 longitude: 30,
+                ['debris_name']: 'this is a debris name'
             },
             {
                 altitude: 6000000,
                 latitude: 70,
                 longitude: 20,
+                ['debris_name']: 'this is a debris name'
             },
             {
                 altitude: 3000000,
                 latitude: 40,
                 longitude: 10,
+                ['debris_name']: 'this is a debris name'
             },
             {
                 altitude: 8000000,
                 latitude: 60,
                 longitude: 30,
+                ['debris_name']: 'this is a debris name'
             },
             {
                 altitude: 8000000,
                 latitude: 100,
                 longitude: -30,
+                ['debris_name']: 'this is a debris name'
             }
         ]
 
+        axios.get("http://cadin-end.herokuapp.com/coordinates")
+        .then((res) => {
+            console.log(res);
+            // positions = res.data;
+        })
 
         const tools = new Tools({ globe: this.globeRef.current, markers: this.markersRef.current, markersLayerName: 'Markers' });
         const callback = tools.dropMarkerCallback.bind(this);
 
         positions.map(position => {
-            callback(position);
+            callback(position, position.debris_name);
         })
 
     }

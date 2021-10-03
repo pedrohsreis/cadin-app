@@ -67,7 +67,7 @@ export default class Tools extends Component {
         this.props.globe.armClickDrop(this.dropMarkerCallback);
     };
 
-    dropMarkerCallback(position) {
+    dropMarkerCallback(position, objectName) {
         // Create a placemark using the selected marker image
 
         console.log("THIS IS RECEIVED POSITION: ", position);
@@ -87,7 +87,7 @@ export default class Tools extends Component {
         attributes.imageSource = this.state.selectedMarkerImage;
 
         let placemark = new WorldWind.Placemark(position, /*eyeDistanceScaling*/ true, attributes);
-        placemark.label = "Lat " + position.latitude.toPrecision(4).toString() + "\nLon " + position.longitude.toPrecision(5).toString() + "\nAlt " + position.altitude.toPrecision(5).toString();
+        placemark.label = "Lat " + position.latitude.toPrecision(4).toString() + "\nLon " + position.longitude.toPrecision(5).toString() + "\nAlt " + position.altitude.toPrecision(5).toString() + "\nName " + objectName;
         placemark.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
         placemark.eyeDistanceScalingThreshold = 2500000;
 
