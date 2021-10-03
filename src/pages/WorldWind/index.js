@@ -54,7 +54,7 @@ export default class WorldWind extends Component {
             }
         ]
         console.count("TEXTO")
-        axios.get("http://127.0.0.1:5000/coordinates")
+        axios.get("https://cadin-end.herokuapp.com/coordinates")
         .then((res) => {
             console.count("TEXTO222")
             console.log(res);
