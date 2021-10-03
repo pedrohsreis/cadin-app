@@ -28,7 +28,7 @@ export default class Tools extends Component {
     }
 
     static pushpins = [
-        require("../assets/img/img_verm.png"),
+        require("../assets/img/icon.png"),
         "https://lh3.googleusercontent.com/ogw/ADea4I4IXxCNWS5_ZXwkGibaAyMkq_x2wXzu1Keq0GEb=s32-c-mo",
         "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-blue.png",
         "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-orange.png",
