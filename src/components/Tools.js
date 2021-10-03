@@ -70,7 +70,7 @@ export default class Tools extends Component {
     dropMarkerCallback(position, objectName) {
         // Create a placemark using the selected marker image
 
-        console.log("THIS IS RECEIVED POSITION: ", position);
+        // console.log("THIS IS RECEIVED POSITION: ", position);
 
         let attributes = new WorldWind.PlacemarkAttributes(null);
         attributes.imageScale = 0.8;
@@ -96,7 +96,7 @@ export default class Tools extends Component {
         console.log(globe);
         const layer = globe.getLayer(this.props.markersLayerName);
         if (layer) {
-            console.log("THIS IS THE LAYER", layer.addRenderable)
+            // console.log("THIS IS THE LAYER", layer.addRenderable)
             // Add the placemark to the globe
             layer.addRenderable(placemark);
 

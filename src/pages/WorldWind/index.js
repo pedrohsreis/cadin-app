@@ -45,29 +45,31 @@ export default class WorldWind extends Component {
         // Get the component with the WorldWindow after mounting
         this.setState({ globe: this.globeRef.current })
 
-        let positions = [
-            {
-                "latitude": 23.0, 
-                ['debris_name']: "MANUAL", 
-                "altitude": 631078.4293272077, 
-                "longitude": 74.0
-            }
-        ]
-        console.count("TEXTO")
-        axios.get("https://cadin-end.herokuapp.com/coordinates")
+        // let positions = [
+        //     {
+        //         "latitude": 23.0, 
+        //         ['debris_name']: "MANUAL", 
+        //         "altitude": 631078.4293272077, 
+        //         "longitude": 74.0
+        //     }
+        // ]
+        let positions2
+        axios.get("http://cadin-end.herokuapp.com/coordinates")
+        // axios.get("http://127.0.0.1:5000/coordinates")
         .then((res) => {
-            console.count("TEXTO222")
             console.log(res);
-            positions = res.data;
+            positions2 = JSON.parse(res.data.data);
         })
-
+        .finally(() =>
+        {
+        let positions = positions2;
         const tools = new Tools({ globe: this.globeRef.current, markers: this.markersRef.current, markersLayerName: 'Markers' });
         const callback = tools.dropMarkerCallback.bind(this);
 
         positions.map(position => {
             callback(position, position.debris_name);
         })
-
+    })
     }
 
     render() {
