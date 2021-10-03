@@ -48,7 +48,7 @@ export default class WorldWind extends Component {
         let positions = [
             {
                 "latitude": 23.0, 
-                ['debris_name']: "FENGYUN 1C", 
+                ['debris_name']: "MANUAL", 
                 "altitude": 631078.4293272077, 
                 "longitude": 74.0
             }
