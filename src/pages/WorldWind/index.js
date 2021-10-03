@@ -54,7 +54,7 @@ export default class WorldWind extends Component {
         //     }
         // ]
         let positions2
-        axios.get("http://cadin-end.herokuapp.com/coordinates")
+        axios.get("https://cadin-end.herokuapp.com/coordinates")
         // axios.get("http://127.0.0.1:5000/coordinates")
         .then((res) => {
             console.log(res);
