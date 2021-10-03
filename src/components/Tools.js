@@ -28,7 +28,7 @@ export default class Tools extends Component {
     }
 
     static pushpins = [
-        require("../assets/img/icon.png"),
+        require("../assets/img/img_verm.png"),
         "https://lh3.googleusercontent.com/ogw/ADea4I4IXxCNWS5_ZXwkGibaAyMkq_x2wXzu1Keq0GEb=s32-c-mo",
         "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-blue.png",
         "https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-orange.png",
@@ -73,7 +73,7 @@ export default class Tools extends Component {
         // console.log("THIS IS RECEIVED POSITION: ", position);
 
         let attributes = new WorldWind.PlacemarkAttributes(null);
-        attributes.imageScale = 0.8;
+        attributes.imageScale = 1.0;
         attributes.imageOffset = new WorldWind.Offset(
             WorldWind.OFFSET_FRACTION, 0.3,
             WorldWind.OFFSET_FRACTION, 0.0);
