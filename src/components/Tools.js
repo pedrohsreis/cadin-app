@@ -93,7 +93,7 @@ export default class Tools extends Component {
 
         // Add the placemark to the layer and to the Markers component
         const globe = this.props.globe;
-        console.log(globe);
+        // console.log(globe);
         const layer = globe.getLayer(this.props.markersLayerName);
         if (layer) {
             // console.log("THIS IS THE LAYER", layer.addRenderable)

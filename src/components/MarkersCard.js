@@ -52,7 +52,7 @@ export default class MarkersCard extends Component {
   addMarker(marker) {
     // Ensure each marker has a unique ID
 
-    console.log("Esse é um marker: ", marker);
+    // console.log("Esse é um marker: ", marker);
 
     if (!marker.uniqueId) {
       marker.uniqueId = MarkersCard.nextMarkerId++
